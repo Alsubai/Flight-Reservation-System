@@ -1,0 +1,69 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    string Name;
+    string FlightNum;
+    string Destinatintion;
+    char again;
+
+    char choice;
+    do
+    {
+        cout << "\n====Flight reservations system====\n";
+        cout << "1. Book a new ticket\n";
+        cout << "2. View current reservation\n";
+        cout << "3. cancellation of reservation\n";
+        cout << "4. Exit\n";
+        cout << "Choose the service number: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+
+        case '1':
+            cout << "\nEnter the passenger's name : ";
+            cin >> Name;
+            cout << "\nEnter the flight number : ";
+            cin >> FlightNum;
+            cout << "\nEnter the destination : ";
+            cin >> Destinatintion;
+            cout << "\nYour reservation has been completed successfully \n";
+            break;
+
+        case '2':
+            if (Name != "")
+            {
+                cout << "\nCurrent reservation\n";
+                cout << "\nPassenger name : " << Name;
+                cout << "\nFlight name : " << FlightNum;
+                cout << "\nDestination : " << Destinatintion << endl; 
+            }
+            else
+                cout << "\nNo reservation\n";
+            break;
+
+        case '3':
+            if (Name != "")
+            {
+                Name = "";
+                FlightNum = "";
+                Destinatintion = "";
+                cout << "\nThe flight has been cancelled\n";
+            }
+            else
+                cout << "\nNo reservation\n";
+            break;
+
+        case '4':
+            cout << "\nExiting the Flight reservations system...\n";
+
+        }
+        cout << "\nDo you want to return to the main menu? y/n : ";
+        cin >> again;
+    }
+    while (again == 'y' || again == 'Y');
+    
+return 0;
+}
